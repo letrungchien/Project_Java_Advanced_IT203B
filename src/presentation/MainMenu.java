@@ -11,7 +11,6 @@ public class MainMenu {
     private static Scanner sc = new Scanner(System.in);
     private static AuthService authService = new AuthService();
 
-    // ✅ THÊM MAIN Ở ĐÂY
     public static void main(String[] args) {
         show();
     }
@@ -74,15 +73,12 @@ public class MainMenu {
     private static void redirectByRole(User user) {
         switch (user.getRole()) {
             case "ADMIN":
-                System.out.println(" Vào menu ADMIN");
                 AdminMenu.show();
                 break;
             case "STAFF":
-                System.out.println(" Vào menu STAFF");
                 StaffMenu.show();
                 break;
             case "CUSTOMER":
-                System.out.println("Vào menu CUSTOMER");
                 CustomerMenu.show(user);
                 break;
             default:

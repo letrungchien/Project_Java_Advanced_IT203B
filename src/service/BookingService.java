@@ -116,7 +116,7 @@ public class BookingService {
             System.out.println(" =====================");
             System.out.println(" Tiền máy: " + pcCost);
             System.out.println(" Tiền đồ ăn: " + foodCost);
-            System.out.println(" 👉 Tổng tiền = " + total);
+            System.out.println(" Tổng tiền = " + total);
             System.out.println(" =====================");
 
         } catch (Exception e) {

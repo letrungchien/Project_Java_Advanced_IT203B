@@ -8,13 +8,12 @@ import java.sql.*;
 
 public class UserDAO {
 
-    // Đăng nhập
-    public User login(String username, String password) {
+    /** Lấy user theo username (mật khẩu lưu dạng bcrypt hoặc plain cũ). */
+    public User findByUsername(String username) {
         try (Connection conn = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM users WHERE username=? AND password=?";
+            String sql = "SELECT * FROM users WHERE username=?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, username);
-            ps.setString(2, password);
 
             ResultSet rs = ps.executeQuery();
 

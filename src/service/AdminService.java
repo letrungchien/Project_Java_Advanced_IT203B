@@ -89,6 +89,7 @@ public class AdminService {
 
     // ================= FOOD =================
 
+
     public void showFoods() {
         List<Food> list = foodDAO.getAll();
         System.out.println("\n===== MENU =====");
@@ -98,10 +99,26 @@ public class AdminService {
         }
     }
 
+    List<Food> list = foodDAO.getAll();
     public void addFood() {
-        System.out.print("Tên: ");
-        String name = sc.nextLine();
+        String name;
 
+        while (true){
+            System.out.print("Tên: ");
+             name = sc.nextLine();
+             int check =0;
+             for (Food i:list){
+                 if(i.equals(name)){
+                     check++;
+                 }
+             }
+            if(check==0){
+                break;
+            }else{
+                System.out.println("Tên đã tồn tại!");
+            }
+
+        }
         System.out.print("Giá: ");
         BigDecimal price = new BigDecimal(sc.nextLine());
 
@@ -114,6 +131,7 @@ public class AdminService {
             System.out.println(" Thêm thành công!");
         }
     }
+
 
     public void updateFood() {
         System.out.print("ID: ");
@@ -135,6 +153,7 @@ public class AdminService {
             System.out.println(" Cập nhật thành công!");
         }
     }
+
 
     public void deleteFood() {
         System.out.print("ID: ");
