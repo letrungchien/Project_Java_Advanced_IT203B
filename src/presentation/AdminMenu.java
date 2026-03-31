@@ -27,7 +27,7 @@ public class AdminMenu {
                 case 0:
                     return;
                 default:
-                    System.out.println("❌ Chọn sai!");
+                    System.out.println("Lựa chọn không hợp lệ!");
             }
         }
     }
@@ -60,7 +60,7 @@ public class AdminMenu {
                 case 0:
                     return;
                 default:
-                    System.out.println("❌ Chọn sai!");
+                    System.out.println("Lựa chọn không hợp lệ!");
             }
         }
     }
@@ -93,7 +93,7 @@ public class AdminMenu {
                 case 0:
                     return;
                 default:
-                    System.out.println("❌ Chọn sai!");
+                    System.out.println("Lựa chọn không hợp lệ!");
             }
         }
     }

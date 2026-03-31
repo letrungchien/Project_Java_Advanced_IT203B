@@ -52,7 +52,7 @@ public class BookingDAO {
         return -1;
     }
 
-    // ===== LẤY TẤT CẢ =====
+
     public List<Booking> getAll() {
         List<Booking> list = new ArrayList<>();
         String sql = "SELECT * FROM bookings";
@@ -78,7 +78,7 @@ public class BookingDAO {
         return list;
     }
 
-    // ===== UPDATE STATUS =====
+
     public void updateStatus(int bookingId, String status) {
         String sql = "UPDATE bookings SET status=? WHERE id=?";
 
@@ -94,7 +94,7 @@ public class BookingDAO {
         }
     }
 
-    // ===== LẤY THEO USER =====
+
     public List<Booking> getByUser(int userId) {
         List<Booking> list = new ArrayList<>();
         String sql = "SELECT * FROM bookings WHERE user_id=?";

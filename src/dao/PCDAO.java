@@ -9,7 +9,7 @@ import java.util.List;
 
 public class PCDAO {
 
-    // ====== LẤY DANH SÁCH ======
+
     public List<PC> getAll() {
         List<PC> list = new ArrayList<>();
         String sql = "SELECT * FROM pcs";
@@ -34,7 +34,7 @@ public class PCDAO {
         return list;
     }
 
-    // ====== TÌM THEO ID ======
+
     public PC findById(int id) {
         String sql = "SELECT * FROM pcs WHERE id = ?";
 
@@ -60,7 +60,7 @@ public class PCDAO {
         return null;
     }
 
-    // ====== THÊM ======
+
     public boolean insert(PC pc) {
         String sql = "INSERT INTO pcs(name, type, price_per_hour, status) VALUES(?,?,?,?)";
 
@@ -80,7 +80,7 @@ public class PCDAO {
         return false;
     }
 
-    // ====== UPDATE ======
+
     public boolean update(PC pc) {
         String sql = "UPDATE pcs SET name=?, type=?, price_per_hour=?, status=? WHERE id=?";
 
@@ -114,7 +114,8 @@ public class PCDAO {
             e.printStackTrace();
         }
     }
-    // ====== DELETE ======
+
+
     public boolean delete(int id) {
         String sql = "DELETE FROM pcs WHERE id=?";
 

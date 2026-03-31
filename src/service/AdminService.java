@@ -108,7 +108,7 @@ public class AdminService {
              name = sc.nextLine();
              int check =0;
              for (Food i:list){
-                 if(i.equals(name)){
+                 if(i.getName().equals(name)){
                      check++;
                  }
              }

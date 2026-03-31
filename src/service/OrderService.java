@@ -15,7 +15,7 @@ public class OrderService {
     private OrderItemDAO orderItemDAO = new OrderItemDAO();
     private Scanner sc = new Scanner(System.in);
 
-    // ===== HIỂN THỊ MENU =====
+    //menu
     public void showMenu() {
         List<Food> list = foodDAO.getAll();
 
@@ -25,7 +25,7 @@ public class OrderService {
         }
     }
 
-    // ===== ORDER FULL FLOW =====
+
     public double orderFlowReturnTotal(int bookingId) {
 
         int orderId = orderDAO.createOrder(bookingId);
@@ -57,7 +57,7 @@ public class OrderService {
 
             double price = food.getPrice().doubleValue();
 
-            // ===== CHECK TRÙNG =====
+
             if (orderItemDAO.exists(orderId, foodId)) {
                 orderItemDAO.updateQty(orderId, foodId, qty);
             } else {
@@ -69,7 +69,7 @@ public class OrderService {
             System.out.println(" Đã thêm món!");
         }
 
-        // update tổng tiền
+
         orderDAO.updateTotal(orderId, total);
 
         // hoàn thành order

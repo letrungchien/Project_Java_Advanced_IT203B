@@ -8,7 +8,6 @@ import java.sql.*;
 
 public class UserDAO {
 
-    /** Lấy user theo username (mật khẩu lưu dạng bcrypt hoặc plain cũ). */
     public User findByUsername(String username) {
         try (Connection conn = DBConnection.getConnection()) {
             String sql = "SELECT * FROM users WHERE username=?";
@@ -32,7 +31,7 @@ public class UserDAO {
         return null;
     }
 
-    // Đăng ký
+
     public boolean register(String username, String password, BigDecimal balance) {
         try (Connection conn = DBConnection.getConnection()) {
 

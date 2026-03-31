@@ -60,7 +60,7 @@ public class OrderDAO {
         }
     }
 
-    // ===== LẤY TẤT CẢ =====
+
     public List<Order> getAll() {
         List<Order> list = new ArrayList<>();
         String sql = "SELECT * FROM orders";
@@ -83,7 +83,7 @@ public class OrderDAO {
         return list;
     }
 
-    // ===== UPDATE STATUS =====
+
     public void updateStatus(int orderId, String status) {
         String sql = "UPDATE orders SET status=? WHERE id=?";
 
@@ -99,7 +99,7 @@ public class OrderDAO {
         }
     }
 
-    // ===== LẤY THEO USER =====
+
     public List<Order> getByUser(int userId) {
         List<Order> list = new ArrayList<>();
 
