@@ -10,7 +10,7 @@ public class PasswordUtil {
     private PasswordUtil() {
     }
 
-    /** Hash mật khẩu bằng bcrypt (dùng khi đăng ký). */
+
     public static String hashBcrypt(String plainText) {
         if (plainText == null) plainText = "";
         return BCrypt.hashpw(plainText, BCrypt.gensalt());
@@ -20,7 +20,7 @@ public class PasswordUtil {
         return stored != null && stored.startsWith("$2");
     }
 
-    /** So khớp mật khẩu: bcrypt hoặc plain (tài khoản cũ chưa migrate). */
+
     public static boolean matches(String plainText, String stored) {
         if (plainText == null) plainText = "";
         if (stored == null) return plainText.isEmpty();
@@ -37,7 +37,7 @@ public class PasswordUtil {
             byte[] hash = digest.digest(plainText.getBytes(StandardCharsets.UTF_8));
             return toHex(hash);
         } catch (NoSuchAlgorithmException e) {
-            // SHA-256 luôn có trong Java chuẩn.
+
             throw new RuntimeException("SHA-256 algorithm not available", e);
         }
     }

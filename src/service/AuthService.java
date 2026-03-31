@@ -15,6 +15,7 @@ public class AuthService {
         if (user == null) {
             return null;
         }
+
         if (!PasswordUtil.matches(password, user.getPassword())) {
             return null;
         }

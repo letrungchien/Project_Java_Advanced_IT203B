@@ -33,7 +33,7 @@ public class StaffService {
         String status = sc.nextLine();
 
         bookingDAO.updateStatus(id, status);
-        System.out.println("✔ Updated!");
+        System.out.println(" Updated!");
     }
 
     public void showOrders() {
@@ -55,6 +55,6 @@ public class StaffService {
         String status = sc.nextLine();
 
         orderDAO.updateStatus(id, status);
-        System.out.println("Updated!");
+        System.out.println("Updated");
     }
 }
